@@ -21,31 +21,35 @@
   </header>
   <main>
     <div class="container p-4">
-      <h2 class="text-uppercase text-center
+      <h2 class="text-uppercase mb-4 text-center
       ">calcola il prezzo del tuo biglietto</h2>
       <div class="__input-container p-4 rounded-4 mb-4">
         <div class="row row-cols-3 mb-4">
           <div class="col">
             <div class="mb-3 text-center">
               <label for="formGroupExampleInput" class="form-label">Nome Cognome</label>
-              <input type="text" class="form-control" id="formGroupExampleInput"
-                placeholder="Example input placeholder">
+              <input type="text" class="form-control" id="input-nome-cognome" placeholder="Inserire nome e cognome">
             </div>
 
           </div>
           <div class="col">
             <div class="mb-3 text-center">
               <label for="formGroupExampleInput" class="form-label">Km da percorrere</label>
-              <input type="text" class="form-control" id="formGroupExampleInput"
-                placeholder="Example input placeholder">
+              <input type="text" class="form-control" id="input-km-da-percorrere"
+                placeholder="Inserire i km da percorrere">
             </div>
 
           </div>
           <div class="col">
             <div class="mb-3 text-center">
               <label for="formGroupExampleInput" class="form-label">Fascia d'età</label>
-              <input type="text" class="form-control" id="formGroupExampleInput"
-                placeholder="Example input placeholder">
+              <select class="form-select form-control __select-age " aria-label=".form-select-sm example"
+                id="input-fascia-d-eta">
+                <option selected value="1">Maggiorenne</option>
+                <option value="2" id="input-minorenne">Minorenne</option>
+                <option value="3" id="input-senior">Senior (dai 65 anni in su)</option>
+
+              </select>
             </div>
 
           </div>
@@ -54,25 +58,56 @@
         <!-- buttons -->
         <div class="__buttons-container d-flex justify-content-center gap-3">
           <div class="__button-genera">
-            <button type="button" class="btn btn-secondary">Genera</button>
+            <button type="button" class="btn btn-secondary" id="genera-btn">Genera</button>
           </div>
           <div class="__button-annulla">
-            <button type="button" class="btn btn-secondary">Annulla</button>
+            <button type="button" class="btn btn-secondary" id="annulla-btn">Annulla</button>
           </div>
 
 
         </div>
 
       </div>
-      <h2 class="text-uppercase text-center
+      <div class="__your-ticket">
+        <h2 class="text-uppercase text-center
       ">il tuo biglietto</h2>
-      <div class="__ticket-display rounded-4 p-4">
-        <h3 class="text-uppercase 
+        <div class="__ticket-display rounded-4 p-4">
+          <h3 class="text-uppercase 
       ">dettagli passeggero</h3>
-        <hr>
-        <!-- tabella Bootstrap -->
+          <hr>
+          <!-- tabella Bootstrap -->
+          <div class="__ticket-details">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" class="text-uppercase
+                ">nome passeggero</th>
+                  <th scope="col"><span>Offerta</span></th>
+                  <th scope="col"><span>Carrozza</span></th>
+                  <th scope="col"><span>Codice CP</span></th>
+                  <th scope="col"><span>Costo Biglietto</span></th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><span id="nome-utente"></span></th>
+                  <td><span>Biglietto Standard</span></td>
+                  <td><span>5</span></td>
+                  <td><span>92911</span></td>
+                  <td><span id="ticket-price"></span></td>
+
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+
+        </div>
 
       </div>
+
 
     </div>
 

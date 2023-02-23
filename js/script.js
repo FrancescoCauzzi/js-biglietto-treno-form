@@ -7,29 +7,47 @@
 // - va applicato uno sconto del 20% per i minorenni
 // - va applicato uno sconto del 40% per gli over 65.
 
+let nomeCognome = document.getElementById('input-nome-cognome');
+// console.log(nomeCognome.value);
+
 // - Il numero di chilometri da percorrere
-let travelDistanceKm = 600;
+let kmDaPercorrere = document.getElementById('input-km-da-percorrere');
+
+console.log(kmDaPercorrere.value);
+
 
 // - Età del passeggero
-let passengerAge = 45;
+let selectAge = document.querySelector('.__select-age');
+console.log(selectAge.value);
 
-// prezzo viaggio al km
+// console.log(selectAge.value);
 
-let pricePerKm = 0.21;
 
-// calcolo il prezzo finale in base ai paletti
 
-// Sconti
+let generaButton = document.getElementById('genera-btn')
 
-let seniorDiscount = 0.4;
-let underageDiscount = 0.2
+// aggiungere funzionalità al bottone click
 
-let finalPrice = travelDistanceKm * pricePerKm;
+generaButton.addEventListener('click', function(){
+  // prezzo viaggio al km
 
-if (passengerAge < 18){
-  finalPrice -= finalPrice*underageDiscount;
-}else if(passengerAge >= 65){
-  finalPrice -= finalPrice*seniorDiscount;
-}
+  let pricePerKm = 0.21;
 
-console.log(finalPrice);
+  // calcolo il prezzo finale in base ai paletti
+
+  // Sconti
+
+  let seniorDiscount = 0.4;
+  let underageDiscount = 0.2;
+
+  let finalPrice = +kmDaPercorrere.value * pricePerKm;
+  
+
+  if (selectAge.value === '2'){
+    finalPrice -= finalPrice*underageDiscount;
+  }else if(selectAge.value === '3'){
+    finalPrice -= finalPrice*seniorDiscount;
+  }
+  document.getElementById('nome-utente').textContent = nomeCognome.value;
+  document.getElementById('ticket-price').textContent = `${finalPrice.toFixed(2)} €`;
+})
