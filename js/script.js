@@ -8,7 +8,7 @@
 // - va applicato uno sconto del 40% per gli over 65.
 
 let nomeCognome = document.getElementById('input-nome-cognome');
-// console.log(nomeCognome.value);
+console.log(nomeCognome.value);
 
 // - Il numero di chilometri da percorrere
 let kmDaPercorrere = document.getElementById('input-km-da-percorrere');
@@ -29,7 +29,9 @@ let generaButton = document.getElementById('genera-btn')
 // aggiungere funzionalità al bottone genera al click
 
 generaButton.addEventListener('click', function(){
-  // prezzo viaggio al km
+
+  if (nomeCognome.value !== '' && kmDaPercorrere.value !== '' ){
+    // prezzo viaggio al km
 
   let pricePerKm = 0.21;
 
@@ -51,6 +53,9 @@ generaButton.addEventListener('click', function(){
   document.getElementById('nome-utente').textContent = nomeCognome.value;
   document.getElementById('ticket-price').textContent = `${finalPrice.toFixed(2)} €`;
   document.querySelector('.__your-ticket').style.display = 'block';
+
+  }
+  
 })
 
 // aggiungere funzionalità al bottone annulla al click (cancella input text)
