@@ -26,7 +26,7 @@ console.log(selectAge.value);
 
 let generaButton = document.getElementById('genera-btn')
 
-// aggiungere funzionalità al bottone click
+// aggiungere funzionalità al bottone genera al click
 
 generaButton.addEventListener('click', function(){
   // prezzo viaggio al km
@@ -50,4 +50,16 @@ generaButton.addEventListener('click', function(){
   }
   document.getElementById('nome-utente').textContent = nomeCognome.value;
   document.getElementById('ticket-price').textContent = `${finalPrice.toFixed(2)} €`;
+  document.querySelector('.__your-ticket').style.display = 'block';
 })
+
+// aggiungere funzionalità al bottone annulla al click (cancella input text)
+
+let clearButton = document.getElementById("annulla-btn");
+
+clearButton.addEventListener("click", function() {
+  kmDaPercorrere.value = "";
+  nomeCognome.value = "";
+  document.querySelector('.__your-ticket').style.display = 'none';
+
+});

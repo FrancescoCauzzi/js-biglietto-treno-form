@@ -9,3 +9,7 @@ body{
 .__input-container, .__ticket-display{
   background-color: yellowgreen;
 }
+
+.__your-ticket{
+  display: none;
+}
